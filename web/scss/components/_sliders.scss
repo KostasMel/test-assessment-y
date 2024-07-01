@@ -1,0 +1,55 @@
+@import "variables/_colors";
+@import "variables/_breakpoints";
+
+.main-slider {
+  .swiper-wrapper {
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .slider-block {
+      @include flex(initial,initial,row);
+      .block-left {
+
+      }
+      .block-right {
+
+      }
+      .text {
+        align-self: center;
+        .text-wrapper {
+          @include flex(baseline,initial,column);
+          margin-left: 150px;
+          span.slider-top-text {
+            font-size: 16px;
+            margin-bottom: 10px;
+          }
+          h1.slider-title {
+            font-size: 54px;
+          }
+          p.slider-description {
+            font-size: 18px;
+            text-align: left;
+          }
+          a.slider-link {
+            color: $text_color__primary;
+            text-decoration: underline;
+            text-underline-offset: 7px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: $md-max-sc) {
+  .main-slider {
+    display: none !important;
+  }
+  }

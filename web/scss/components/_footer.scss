@@ -1,0 +1,102 @@
+@import "variables/_colors";
+@import "variables/_breakpoints";
+
+footer {
+  padding: 0;
+  background: $background_color__secondary;
+
+  .container {
+    .upper-row {
+      @include flex(initial, space-between, row);
+      height: 162px;
+      padding: 52px;
+      .footer-column {
+        &.info {
+          flex: 3;
+          .footer-logo {
+            width: 120px;
+            height: 36px;
+          }
+
+          .footer-description {
+            font-size: 16px;
+            font-weight: 400;
+            color: $text-color__secondary;
+            max-width: 320px;
+            line-height: 2;
+          }
+        }
+
+        &.nav-links {
+          flex:1;
+          .ft-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: $text_color__primary;
+          }
+
+          ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+              margin: 10px 0;
+
+              a.nav-link {
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 400;
+                color: $text-color__secondary;
+              }
+            }
+          }
+        }
+      }
+
+      .social-icons {
+        ul {
+          @include flex(center, flex-start,row);
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+
+          li.icon {
+            background: $social_icons_background;
+            border-radius: 100%;
+            margin-right: 20px;
+            padding: 9px;
+            cursor:pointer;
+            &.facebook {
+              @include icon('../images/icons/facebook.svg', 18px, 18px);
+            }
+
+            &.instagram {
+              @include icon('../images/icons/instagram.svg', 18px, 18px);
+            }
+
+            &.twitter {
+              @include icon('../images/icons/twitter.svg', 18px, 18px);
+            }
+
+            &.email {
+              @include icon('../images/icons/email.svg', 18px, 18px);
+            }
+          }
+        }
+
+      }
+    }
+    .copyright {
+      @include flex(center,space-between,row);
+      margin: 0 52px;
+      border-top: 1px solid;
+      border-top-color: $hr_line_footer;
+      height: 60px;
+      .copyright-text {
+        font-size: 14px;
+        color: $text-color__secondary;
+      }
+    }
+  }
+}

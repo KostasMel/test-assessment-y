@@ -1,0 +1,51 @@
+@import "variables/_colors";
+@import "variables/_breakpoints";
+
+@mixin flex($align: 'initial', $justify: 'initial', $direction: 'initial') {
+  display: flex;
+  @if $align != 'initial' {
+    align-items: $align;
+  }
+  @if $justify != 'initial' {
+    justify-content: $justify;
+  }
+  @if $direction != 'initial' {
+    flex-direction: $direction;
+  }
+}
+
+@mixin grid($align: 'initial', $justify: 'initial', $direction: 'initial') {
+  display: grid;
+
+  @if $align!= 'initial' {
+    place-items: $align;
+  }
+
+  @if $justify!= 'initial' {
+    justify-items: $justify;
+  }
+
+  @if $direction!= 'initial' {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@mixin icon($src, $width, $height) {
+  &:before {
+    content: '';
+    background-image: url($src);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: $width;
+    height: $height;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@mixin primary-button {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

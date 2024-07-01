@@ -1,0 +1,15 @@
+// Breakpoints MIN
+$xs-min-sc: 640px;
+$sm-min-sc: 768px;
+$md-min-sc: 992px;
+$ml-min-sc: 1024px;
+$lg-min-sc: 1280px;
+
+// Breakpoints MAX
+$xs-max-sc: $xs-min-sc - 1;
+$sm-max-sc: $sm-min-sc - 1;
+$md-max-sc: $md-min-sc - 1;
+$ml-max-sc: $ml-min-sc - 1;
+$lg-max-sc: $lg-min-sc - 1;
+
+$max-width: 1920px;

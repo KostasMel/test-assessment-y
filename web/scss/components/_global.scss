@@ -1,0 +1,13 @@
+@import "variables/_colors";
+@import "variables/_breakpoints";
+
+body {
+  margin:0;
+  padding: 0;
+  font-family: 'Inter', serif;
+  .page-wrapper {
+    max-width: $max-width;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
