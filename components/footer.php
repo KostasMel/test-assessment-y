@@ -1,8 +1,7 @@
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
-    var swiper = new Swiper(".mySwiper", {
+    var swiper = new Swiper(".main-slider", {
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -19,10 +18,10 @@
                 <p class="footer-description">Phosf luorescently engage worldwide method process shopping.</p>
                 <div class="social-icons">
                     <ul>
-                        <li class="icon facebook"><a class="facebook" href="#"></a></li>
-                        <li class="icon instagram"></li>
-                        <li class="icon twitter"></li>
-                        <li class="icon email"></li>
+                        <li class="icon facebook"><a href="https://www.facebook.com/"></a></li>
+                        <li class="icon instagram"><a  href="https://www.facebook.com/"></a></li>
+                        <li class="icon twitter"><a href="https://www.facebook.com/"></a></li>
+                        <li class="icon email"><a href="https://www.facebook.com/"></a></li>
                     </ul>
                 </div>
             </div>

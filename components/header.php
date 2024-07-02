@@ -5,14 +5,16 @@
                 <a href="#"><img src="../web/images/logo.svg" alt="Clonify"/></a>
             </div>
         </div>
+
         <div class="column second">
-            <nav>
-                <ul>
-                    <li><a class="nav-item current" href="#">Home</a></li>
-                    <li><a class="nav-item" href="#">Shop</a></li>
-                    <li><a class="nav-item has-dropdown" href="#">Product</a></li>
-                    <li><a class="nav-item" href="#">Pages</a></li>
-                </ul>
+            <nav class="main-menu">
+                <div class="close-nav"><span class="close"></span></div>
+                    <ul class="menu-links">
+                        <li><a class="item nav-item current" href="#">Home</a></li>
+                        <li><a class="item nav-item" href="#">Shop</a></li>
+                        <li><a class="item nav-item has-dropdown" href="#">Product</a></li>
+                        <li><a class="item nav-item" href="#">Pages</a></li>
+                    </ul>
             </nav>
         </div>
         <div class="column third">
@@ -24,7 +26,7 @@
                     <span class="counter-number">2</span>
                 </span>
             </a>
-            <a class="mobile-menu"></a>
+            <a class="icon burger toggle-nav"></a>
         </div>
     </div>
 </header>
