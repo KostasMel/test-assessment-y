@@ -15,7 +15,9 @@
 <!-- Swipper Library-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Slideout Library-->
+<script src="../web/js/lib/slideout.min.js" type="text/javascript"></script>
 <!-- Custom Scripts -->
 <script src="../web/js/mobile-menu.js" type="module"></script>
 <script src="../web/js/mobile-footer.js" type="text/javascript"></script>
-<script src="../web/js/lib/slideout.min.js"></script>
+<script src="../web/js/newsletter-modal.js" type="text/javascript"></script>
