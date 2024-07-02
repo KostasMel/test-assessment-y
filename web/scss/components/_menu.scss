@@ -1,29 +1,48 @@
 @import "variables/_colors";
 @import "variables/_breakpoints";
 
-nav {
-  ul {
+body {
+  &.hide-scrolling {
+    overflow-y: hidden;
+  }
+}
+
+nav.main-menu {
+  ul.menu-links {
+    @include flex(flex-start, space-around);
     list-style-type: none;
     margin: 0;
     padding: 0;
-
-    li {
+    width: 50%;
+    text-transform: uppercase;
+    > li {
+      position: relative;
+      float: left;
+      width: auto;
       display: inline-block;
 
-      .nav-item {
-
+      a.nav-item {
         text-decoration: none;
         color: $text_color__primary;
         font-weight: 500;
         font-size: 14px;
         padding: 26px 10px;
         margin-inline: 10px;
-        transition: .3s;
         cursor: pointer;
+        display: block;
+        text-transform: uppercase;
+        border-bottom: 2px solid transparent;
+        transition: 0.5s ease;
+        transform: translateX(0%);
+
+        &:hover {
+          color: rgb(0, 0, 0);
+        }
 
         &.has-dropdown {
-          @include flex(center,center,row);
+          @include flex(center, center, row);
           gap: 10px;
+
           &:after {
             content: '';
             background-image: url('../images/icons/chevron.svg');
@@ -41,6 +60,124 @@ nav {
 
         }
       }
+    }
+  }
+}
+
+
+.close-nav,
+.toggle-nav {
+  display: none;
+}
+
+@media screen and (max-width: $md-max-sc) {
+  .toggle-nav,
+  .close-nav {
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+    font-size: 26px;
+  }
+
+  .toggle-nav {
+    display: block;
+  }
+  .close-nav {
+    display: none;
+    animation: translateX 400ms 0ms ease-in-out forwards;
+  }
+
+  .main-menu {
+    position: relative;
+    display: none;
+    .active {
+      display: block;
+    }
+  }
+
+  .nav-open {
+    .close-nav {
+      display: block;
+      z-index: 15;
+      position: absolute;
+      right: 13px;
+      left: unset;
+      top: 0px;
+      float: left;
+    }
+  }
+
+  .main-menu {
+    &.active {
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      margin-top: 0px;
+      width: 60%;
+      height: 100vh;
+      display: flex;
+      z-index: 14;
+      .menu-links {
+        display: block !important;
+        background-color: #fff;
+        float: left;
+        margin-top: 0px;
+        padding: 40px 20px;
+        width: 100%;
+        height: 100vh;
+        overflow: scroll;
+        transform-origin: top center;
+        animation: translateX 400ms 0ms ease-in-out forwards;
+      > li {
+        float: left;
+        width: 100%;
+        a.nav-item {
+          float: left;
+          width: 100%;
+          text-decoration: none;
+          color: $text_color__primary;
+          padding: 10px 0;
+          &.has-dropdown {
+            width: auto;
+          }
+        }
+      }
+      }
+    }
+    .menu-links {
+      display: none !important;
+    }
+  }
+
+  @keyframes translateX {
+    0% {
+      opacity: 0;
+      transform: translateX(-160px);
+    }
+    80% {
+      transform: translateX(-5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  #menu-overlay {
+    background-color: rgba(0, 0, 0, .3);
+    float: left;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    z-index: 13;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &.show {
+      display: block !important;
     }
   }
 }

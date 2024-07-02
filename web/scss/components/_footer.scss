@@ -10,9 +10,11 @@ footer {
       @include flex(initial, space-between, row);
       height: 162px;
       padding: 52px;
+
       .footer-column {
         &.info {
           flex: 3;
+
           .footer-logo {
             width: 120px;
             height: 36px;
@@ -28,7 +30,8 @@ footer {
         }
 
         &.nav-links {
-          flex:1;
+          flex: 1;
+
           .ft-text {
             font-size: 14px;
             font-weight: 500;
@@ -56,7 +59,7 @@ footer {
 
       .social-icons {
         ul {
-          @include flex(center, flex-start,row);
+          @include flex(center, flex-start, row);
           list-style-type: none;
           margin: 0;
           padding: 0;
@@ -66,7 +69,8 @@ footer {
             border-radius: 100%;
             margin-right: 20px;
             padding: 9px;
-            cursor:pointer;
+            cursor: pointer;
+
             &.facebook {
               @include icon('../images/icons/facebook.svg', 18px, 18px);
             }
@@ -87,15 +91,76 @@ footer {
 
       }
     }
+
     .copyright {
-      @include flex(center,space-between,row);
+      @include flex(center, space-between, row);
       margin: 0 52px;
       border-top: 1px solid;
       border-top-color: $hr_line_footer;
       height: 60px;
+
       .copyright-text {
         font-size: 14px;
         color: $text-color__secondary;
+      }
+    }
+  }
+}
+
+@media all and (max-width: $md-max-sc) {
+  footer {
+    .container {
+      .upper-row {
+        @include flex(initial, space-between, column);
+        padding: 20px 15px;
+        min-height: 300px;
+
+        .footer-column {
+          &.info {
+            .footer-description {
+              font-size: 14px;
+            }
+          }
+
+          &.nav-links {
+            padding: 0;
+            margin: 0;
+
+            span.ft-text {
+              @include flex(center, center, row);
+              padding: 6px 0 12px;
+              margin-bottom: 0;
+              border-bottom: 1px solid;
+              border-bottom-color: $hr_line_footer;
+              width: 100%;
+              position: relative;
+              display: block;
+              @include icon('../images/icons/chevron.svg', 12px, 12px);
+
+              &:before {
+                position: absolute;
+                right: 10px;
+              }
+
+            }
+          }
+
+          &:not(.open) {
+            ul {
+              display: none;
+            }
+          }
+
+          &.open {
+
+          }
+
+        }
+      }
+
+      .copyright {
+        border: none;
+        justify-content: center;
       }
     }
   }

@@ -2,40 +2,43 @@
 @import "variables/_breakpoints";
 
 .main-slider {
-  .swiper-wrapper {
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
 
-    }
+  .swiper-wrapper {
+
     .slider-block {
-      @include flex(initial,initial,row);
+      @include flex(initial, initial, row);
+
       .block-left {
 
       }
+
       .block-right {
 
       }
+
       .text {
         align-self: center;
+
         .text-wrapper {
-          @include flex(baseline,initial,column);
+          @include flex(baseline, initial, column);
           margin-left: 150px;
+
           span.slider-top-text {
             font-size: 16px;
             margin-bottom: 10px;
           }
+
           h1.slider-title {
             font-size: 54px;
+            text-align: left;
+            margin: 0;
           }
+
           p.slider-description {
             font-size: 18px;
             text-align: left;
           }
+
           a.slider-link {
             color: $text_color__primary;
             text-decoration: underline;
@@ -46,10 +49,62 @@
       }
     }
   }
+
+  .icon {
+    background: $social_icons_background;
+    border-radius: 100%;
+    margin-right: 10px;
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+  }
+  .swiper-button-next {
+
+    @include icon('../images/icons/arrow-right.svg', 32px, 32px);
+
+    &:after {
+      content: '';
+    }
+  }
+
+  .swiper-button-prev {
+    @include icon('../images/icons/arrow-left.svg', 32px, 32px);
+    &:after {
+      content: '';
+    }
+  }
 }
 
 @media all and (max-width: $md-max-sc) {
   .main-slider {
-    display: none !important;
+    .swiper-wrapper {
+      .slider-block {
+        flex-direction: column;
+
+        .block-right {
+          padding: 30px;
+
+          .text-wrapper {
+            margin: 0;
+
+            span.slider-top-text {
+              font-size: 14px;
+            }
+
+            img.slider-small-img {
+              display: none;
+            }
+
+            h1.slider-title {
+              font-size: 28px;
+            }
+
+            p.slider-description, a.slider-link {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
   }
-  }
+}
